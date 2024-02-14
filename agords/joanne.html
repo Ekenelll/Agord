@@ -11,15 +11,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        background-color: #f7d4e5; /* Light pink */
+        min-height: 100vh;
+        background-color: #f7d4e5;
         overflow: hidden;
         font-family: cursive;
     }
 
     .container {
         position: relative;
-        width: 400px;
+        width: 90%;
+        max-width: 400px;
         height: auto;
         background: #fff;
         border-radius: 20px;
@@ -35,7 +36,7 @@
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         position: relative;
-        z-index: 2; /* Place the photo above the heart background */
+        z-index: 2;
     }
 
     #glowing-heart {
@@ -44,11 +45,12 @@
         position: absolute;
         bottom: 10px;
         right: 10px;
-        width: 50px;
+        width: 20%;
+        max-width: 50px;
         cursor: grab;
         user-select: none;
         touch-action: none;
-        z-index: 3; /* Place the glowing heart above the photo */
+        z-index: 3;
     }
 
     .heart-background {
@@ -62,15 +64,15 @@
         pointer-events: none;
         background: url('media/heart.png') repeat;
         background-size: 80px;
-        z-index: 1; /* Place the heart background behind everything */
+        z-index: 1;
     }
 
     .heart {
         opacity: 0;
         animation: showHearts 1s forwards;
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 10px;
+        height: 10px;
         background-image: url('media/heart.png');
         background-repeat: no-repeat;
         background-position: center;
@@ -83,11 +85,11 @@
         position: absolute;
         top: 72%;
         bottom: 22px;
-        left: 46%;
+        left: 50%;
         transform: translateX(-50%);
-        font-size: 15px; /* Smaller font size */
+        font-size: 15px;
         color: #ff6392;
-        z-index: 3; /* Place the text above the heart background */
+        z-index: 3;
     }
 
     
@@ -103,7 +105,6 @@
         animation: fireworks 3s infinite;
     }
 
-    /* Animation keyframes */
     @keyframes fireworks {
         0% {
             opacity: 0;
@@ -171,34 +172,26 @@
             opacity: 1;
         }
     }
-    
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .container {
+            margin: 20px;
+        }
+
+        .valentine-text {
+            font-size: 12px;
+        }
+    }
 </style>
 </head>
 <body>
      <div class="fireworks"></div>
     <div class="container">
         <div class="heart-background"></div>
-        <img id="photocard" img src="/Agord/media/joanne.png" alt="Photo Card">
-        <img id="glowing-heart" img src="/Agord/media/heart.png" alt="Glowing Heart">
+        <img id="photocard" src="/Agord/media/joanne.png" alt="Photo Card">
+        <img id="glowing-heart" src="/Agord/media/heart.png" alt="Glowing Heart">
         <p class="valentine-text">Happy Valentine's Day! Future RPh Joanne Olpindo!</p>
-        <!-- Add more heart elements as needed -->
-    </div>
-
-    <script>
-
-    </script>
-</body>
-</html>
-
-</head>
-<body>
-     <div class="fireworks"></div>
-    <div class="container">
-        <div class="heart-background"></div>
-        <img id="photocard" img src="/Agord/media/joanne.png" alt="Photo Card">
-        <img id="glowing-heart" img src="/Agord/media/heart.png" alt="Glowing Heart">
-        <p class="valentine-text">Happy Valentine's Day! Future RPh Joanne Olpindo!</p>
-        <!-- Add more heart elements as needed -->
     </div>
 
     <script>
