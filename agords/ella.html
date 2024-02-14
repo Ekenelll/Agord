@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>To: Ed</title>
+<title>To: Ella</title>
 <style>
     body {
         margin: 0;
@@ -11,16 +11,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        background-color: #f7d4e5;
+        height: 100vh;
+        background-color: #f7d4e5; /* Light pink */
         overflow: hidden;
         font-family: cursive;
     }
 
     .container {
         position: relative;
-        width: 90%;
-        max-width: 400px;
+        width: 400px;
         height: auto;
         background: #fff;
         border-radius: 20px;
@@ -36,7 +35,7 @@
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         position: relative;
-        z-index: 2;
+        z-index: 2; /* Place the photo above the heart background */
     }
 
     #glowing-heart {
@@ -45,12 +44,11 @@
         position: absolute;
         bottom: 10px;
         right: 10px;
-        width: 20%;
-        max-width: 50px;
+        width: 50px;
         cursor: grab;
         user-select: none;
         touch-action: none;
-        z-index: 3;
+        z-index: 3; /* Place the glowing heart above the photo */
     }
 
     .heart-background {
@@ -64,15 +62,15 @@
         pointer-events: none;
         background: url('media/heart.png') repeat;
         background-size: 80px;
-        z-index: 1;
+        z-index: 1; /* Place the heart background behind everything */
     }
 
     .heart {
         opacity: 0;
         animation: showHearts 1s forwards;
         position: absolute;
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
         background-image: url('media/heart.png');
         background-repeat: no-repeat;
         background-position: center;
@@ -87,38 +85,12 @@
         bottom: 22px;
         left: 45%;
         transform: translateX(-50%);
-        font-size: 15px;
+        font-size: 15px; /* Smaller font size */
         color: #ff6392;
-        z-index: 3;
+        z-index: 3; /* Place the text above the heart background */
     }
 
-    
-    .fireworks {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        pointer-events: none;
-        background-image: radial-gradient(circle, #ffdd55 10%, transparent 70%);
-        animation: fireworks 3s infinite;
-    }
-
-    @keyframes fireworks {
-        0% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: translateY(-100px) scale(0.5);
-        }
-    }
-    
+    /* Animation keyframes */
     @keyframes showPhotoCard {
         0% {
             opacity: 0;
@@ -172,26 +144,17 @@
             opacity: 1;
         }
     }
-
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-        .container {
-            margin: 20px;
-        }
-
-        .valentine-text {
-            font-size: 12px;
-        }
-    }
+    
 </style>
 </head>
 <body>
-     <div class="fireworks"></div>
+    <div class="fireworks"></div>
     <div class="container">
         <div class="heart-background"></div>
-        <img id="photocard" src="/Agord/media/ed.png" alt="Photo Card">
-        <img id="glowing-heart" src="/Agord/media/heart.png" alt="Glowing Heart">
-        <p class="valentine-text">Happy Valentine's Day! Future RPH Ed Andrea "Dora" Ti-ong!</p>
+        <img id="photocard" img src="/Agord/media/ella.png" alt="Photo Card">
+        <img id="glowing-heart" img src="/Agord/media/heart.png" alt="Glowing Heart">
+        <p class="valentine-text">Happy Valentine's Day! Future RPH Ella Mae Miral!</p>
+        <!-- Add more heart elements as needed -->
     </div>
 
     <script>
